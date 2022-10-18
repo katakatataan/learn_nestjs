@@ -1,9 +1,35 @@
 import { AppController } from './app.controller';
 import { Module } from '@nestjs/common';
-import { AppService } from './app.service';
+import { AppService, AppService2 } from './app.service';
+
+class MockClass extends AppService2 {
+  all(){
+    return ["asdfa"]
+  }
+  getHello(){
+    return "hell"
+  }
+
+}
 
 @Module({
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    {
+      provide: AppService,
+      useValue: {
+        getHello: () => {
+          return "hello"
+        },
+        all: () => {
+          return ["hello", "saygoodby"]
+        },
+      },
+    },
+    {
+      provide: AppService2,
+      useClass: MockClass
+    },
+  ],
 })
 export class AppModule {}

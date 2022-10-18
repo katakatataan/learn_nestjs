@@ -15,10 +15,8 @@ let ValidationPipe = class ValidationPipe {
         if (!metatype || !this.toValidate(metatype)) {
             return value;
         }
-        console.log(value);
         const object = (0, class_transformer_1.plainToInstance)(metatype, value);
         const errors = await (0, class_validator_1.validate)(object);
-        console.log(errors);
         if (errors.length > 0) {
             throw new common_1.BadRequestException('Validation failed');
         }

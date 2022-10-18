@@ -10,12 +10,36 @@ exports.AppModule = void 0;
 const app_controller_1 = require("./app.controller");
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
+class MockClass extends app_service_1.AppService2 {
+    all() {
+        return ["asdfa"];
+    }
+    getHello() {
+        return "hell";
+    }
+}
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [
+            {
+                provide: app_service_1.AppService,
+                useValue: {
+                    getHello: () => {
+                        return "hello";
+                    },
+                    all: () => {
+                        return ["hello", "saygoodby"];
+                    },
+                },
+            },
+            {
+                provide: app_service_1.AppService2,
+                useClass: MockClass
+            },
+        ],
     })
 ], AppModule);
 exports.AppModule = AppModule;

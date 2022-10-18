@@ -19,14 +19,33 @@ const user_decorator_1 = require("./common/user.decorator");
 const app_service_1 = require("./app.service");
 const validation_pipe_1 = require("./common/validation.pipe");
 let AppController = class AppController {
-    constructor(appService) {
+    constructor(appService, app2) {
         this.appService = appService;
+        this.app2 = app2;
+    }
+    async findAll() {
+        return this.appService.all();
+    }
+    async two() {
+        return this.app2.all();
     }
     async findOne(user) {
         console.log(user);
         return user;
     }
 };
+__decorate([
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Get)('/secd'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "two", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, user_decorator_1.User)(new validation_pipe_1.ValidationPipe())),
@@ -36,7 +55,8 @@ __decorate([
 ], AppController.prototype, "findOne", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
-    __metadata("design:paramtypes", [app_service_1.AppService])
+    __metadata("design:paramtypes", [app_service_1.AppService,
+        app_service_1.AppService2])
 ], AppController);
 exports.AppController = AppController;
 //# sourceMappingURL=app.controller.js.map
