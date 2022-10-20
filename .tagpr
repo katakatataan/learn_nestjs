@@ -17,4 +17,4 @@
 [tagpr]
 	vPrefix = true
 	releaseBranch = main
-	versionFile = action.yml
+	versionFile = versionfile
