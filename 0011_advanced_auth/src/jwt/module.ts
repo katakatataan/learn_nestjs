@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
-import { AuthService } from './jwtprovider.service';
+import { JwtTokenService } from './jwtToken.service';
 
 @Module({
   imports: [
@@ -12,12 +12,12 @@ RBAYRPOqPRFr/DjcHEXUQYW6cBTGMFieq9eiATSulIeMbQ49OsTdWg47Qg==
       `,
       privateKey: `-----BEGIN EC PRIVATE KEY-----
 MHcCAQEEIKmuaP40U5G3+L7JFnHq2XcDeJBjcg5PwRdVnTYCyr6/oAoGCCqGSM49
-AwEHoUQDQgAEXIs1iby+pUpLmxnk4imFbmicOWKVRBAYRPOqPRFr/DjcHEXUQYW6
+AwEHoUQDQgAEXIs1ibpUpLmxnk4imFbmicOWKVRBAYRPOqPRFr/DjcHEXUQYW6
 cBTGMFieq9eiATSulIeMbQ49OsTdWg47Qg==
 -----END EC PRIVATE KEY-----"`
     }),
   ],
-  providers: [AuthService],
-  exports: [AuthService],
+  providers: [JwtTokenService],
+  exports: [JwtTokenService],
 })
-export class AuthModule {}
+export class MyJwtModule {}

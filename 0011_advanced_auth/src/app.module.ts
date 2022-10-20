@@ -1,4 +1,4 @@
-import { AuthModule } from './jwt/module';
+import { AuthModule } from './auth/module';
 import { AppController } from './app.controller';
 import { Module } from '@nestjs/common';
 import { AppService, AppService2 } from './app.service';
