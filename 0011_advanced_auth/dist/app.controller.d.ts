@@ -1,6 +1,6 @@
 import { UserEntity } from './common/user';
 import { AppService, AppService2 } from './app.service';
-import { AuthService } from './jwt/jwtprovider.service';
+import { AuthService } from './auth/auth.service';
 export declare class AppController {
     private readonly appService;
     private readonly app2;

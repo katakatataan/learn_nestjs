@@ -3,7 +3,7 @@ import { UserEntity } from './common/user';
 import { User } from './common/user.decorator';
 import { AppService, AppService2 } from './app.service';
 import { ValidationPipe } from './common/validation.pipe';
-import { AuthService } from './jwt/jwtprovider.service';
+import { AuthService } from './auth/auth.service';
 
 @Controller()
 export class AppController {

@@ -18,7 +18,7 @@ const user_1 = require("./common/user");
 const user_decorator_1 = require("./common/user.decorator");
 const app_service_1 = require("./app.service");
 const validation_pipe_1 = require("./common/validation.pipe");
-const jwtprovider_service_1 = require("./jwt/jwtprovider.service");
+const auth_service_1 = require("./auth/auth.service");
 let AppController = class AppController {
     constructor(appService, app2, authService) {
         this.appService = appService;
@@ -59,7 +59,7 @@ AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService,
         app_service_1.AppService2,
-        jwtprovider_service_1.AuthService])
+        auth_service_1.AuthService])
 ], AppController);
 exports.AppController = AppController;
 //# sourceMappingURL=app.controller.js.map

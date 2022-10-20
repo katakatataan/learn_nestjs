@@ -6,13 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthModule = void 0;
+exports.MyJwtModule = void 0;
 const common_1 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
-const jwtprovider_service_1 = require("./jwtprovider.service");
-let AuthModule = class AuthModule {
+const jwtToken_service_1 = require("./jwtToken.service");
+let MyJwtModule = class MyJwtModule {
 };
-AuthModule = __decorate([
+MyJwtModule = __decorate([
     (0, common_1.Module)({
         imports: [
             jwt_1.JwtModule.register({
@@ -23,14 +23,14 @@ RBAYRPOqPRFr/DjcHEXUQYW6cBTGMFieq9eiATSulIeMbQ49OsTdWg47Qg==
       `,
                 privateKey: `-----BEGIN EC PRIVATE KEY-----
 MHcCAQEEIKmuaP40U5G3+L7JFnHq2XcDeJBjcg5PwRdVnTYCyr6/oAoGCCqGSM49
-AwEHoUQDQgAEXIs1iby+pUpLmxnk4imFbmicOWKVRBAYRPOqPRFr/DjcHEXUQYW6
+AwEHoUQDQgAEXIs1ibpUpLmxnk4imFbmicOWKVRBAYRPOqPRFr/DjcHEXUQYW6
 cBTGMFieq9eiATSulIeMbQ49OsTdWg47Qg==
 -----END EC PRIVATE KEY-----"`
             }),
         ],
-        providers: [jwtprovider_service_1.AuthService],
-        exports: [jwtprovider_service_1.AuthService],
+        providers: [jwtToken_service_1.JwtTokenService],
+        exports: [jwtToken_service_1.JwtTokenService],
     })
-], AuthModule);
-exports.AuthModule = AuthModule;
+], MyJwtModule);
+exports.MyJwtModule = MyJwtModule;
 //# sourceMappingURL=module.js.map
